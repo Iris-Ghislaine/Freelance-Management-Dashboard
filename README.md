@@ -75,6 +75,14 @@ src/
 ├── index.css            # Global styles with Tailwind
 └── main.tsx             # Entry point
 ```
+
+## Screenshots
+<img width="1536" height="872" alt="image" src="https://github.com/user-attachments/assets/7a2eae38-210b-480f-b515-172ce9fe7da9" />
+
+<img width="1514" height="880" alt="image" src="https://github.com/user-attachments/assets/61d027ed-9cb8-482a-908d-cb7e7bf70eb9" />
+
+<img width="1390" height="714" alt="image" src="https://github.com/user-attachments/assets/6ac89b35-2cd9-40f0-ad28-53af13849707" />
+
 ### Managing Payments
 
 - Click **"Mark as Paid"** on any unpaid project
