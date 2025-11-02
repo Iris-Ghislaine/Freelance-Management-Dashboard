@@ -14,7 +14,7 @@ A modern, type-safe freelance management dashboard built with React, TypeScript,
 
 ## Technologies Used
 
-- **React 18** - Modern UI library
+- **React** - Modern UI library
 - **TypeScript** - Type-safe development
 - **Tailwind CSS** - Utility-first styling
 - **Context API + useReducer** - Global state management
@@ -25,14 +25,14 @@ A modern, type-safe freelance management dashboard built with React, TypeScript,
 
 ### Prerequisites
 
-- Node.js (v16 or higher)
+- Node.js
 - npm or yarn
 
 ### Installation
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/Iris-Ghislaine/Freelance-Management-Dashboard
    cd freelance-dashboard
    ```
 
