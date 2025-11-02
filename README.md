@@ -1,75 +1,162 @@
-# React + TypeScript + Vite
+# Freelance Management Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, type-safe freelance management dashboard built with React, TypeScript, and Tailwind CSS. Manage your clients, projects, and payments with a beautiful, responsive interface.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Client Management** - View and organize all your clients with contact information
+- **Project Tracking** - Track project status, budget, and payment status in real-time
+- **Payment History** - Complete payment records with amounts and dates
+- **Smart Filtering** - Filter projects by status, payment state, or search by title
+- **Dashboard Statistics** - At-a-glance metrics showing totals, paid/unpaid counts, and revenue
+- **Type-Safe Architecture** - Full TypeScript implementation with discriminated unions and Context API
+- **Responsive Design** - Works seamlessly on desktop, tablet, and mobile devices
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- **React 18** - Modern UI library
+- **TypeScript** - Type-safe development
+- **Tailwind CSS** - Utility-first styling
+- **Context API + useReducer** - Global state management
+- **Lucide React** - Beautiful, consistent icons
+- **Vite** - Lightning-fast build tool
 
-Note: This will impact Vite dev & build performances.
+## Getting Started
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Node.js (v16 or higher)
+- npm or yarn
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd freelance-dashboard
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in browser**
+   - Navigate to `http://localhost:5173` (or the URL shown in terminal)
+
+### Build for Production
+
+```bash
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Project Structure
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+├── components/           # Reusable React components
+│   ├── ClientCard.tsx   # Individual client display
+│   ├── ProjectList.tsx  # Project list with actions
+│   ├── PaymentList.tsx  # Payment history table
+│   ├── DashboardStats.tsx # Statistics cards
+│   └── FilterSection.tsx # Search and filter controls
+├── context/             # Global state management
+│   └── AppContext.tsx   # Context API + useReducer setup
+├── types/               # TypeScript type definitions
+│   └── index.ts         # All interfaces and unions
+├── utils/               # Helper functions
+│   └── helpers.ts       # Data manipulation and formatting
+├── App.tsx              # Main application component
+├── index.css            # Global styles with Tailwind
+└── main.tsx             # Entry point
+```
+### Managing Payments
+
+- Click **"Mark as Paid"** on any unpaid project
+- This automatically records a payment entry
+- Updates the project status in real-time
+
+### Filtering & Searching
+
+- **Search Box** - Find projects by title
+- **Status Filter** - Show pending, in-progress, or completed projects
+- **Payment Filter** - Show only paid or unpaid projects
+
+## Available Scripts
+
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run preview  # Preview production build locally
+npm run lint     # Run ESLint
+npm run typecheck # Check TypeScript types
+```
+
+## Styling
+
+The project uses **Tailwind CSS** for styling. If you don't see styles:
+
+1. Stop the dev server (Ctrl+C)
+2. Clear cache: `rm -rf node_modules package-lock.json`
+3. Reinstall: `npm install`
+4. Run: `npm run dev`
+5. Hard refresh browser (Ctrl+Shift+R)
+
+## Component Overview
+
+### ClientCard
+Displays individual client information with icons and optional email.
+
+### ProjectList
+Shows all projects with:
+- Project title and linked client
+- Status badges (pending, in-progress, completed)
+- Payment status (paid, unpaid)
+- Budget amount
+- "Mark as Paid" action button
+
+### PaymentList
+Table view of payment history with:
+- Project name and ID
+- Payment amount
+- Payment date
+
+### DashboardStats
+Five statistics cards showing:
+- Total projects
+- Total budget
+- Paid project count
+- Unpaid project count
+- Total payments received
+
+### FilterSection
+Search and filter controls for finding specific projects.
+
+## Performance
+- Built with Vite for fast development and production builds
+- Type-safe code prevents runtime errors
+- Efficient Context API usage with useReducer
+- Optimized Tailwind CSS bundle (~14KB gzipped)
+
+## Browser Support
+
+Works on all modern browsers:
+- Chrome/Edge (latest)
+- Firefox (latest)
+- Safari (latest)
+
+
+## Support
+
+For issues or questions, please check:
+1. Browser console for error messages
+2. Ensure all dependencies are installed
+3. Try clearing cache and rebuilding
+4. Check that Node.js version is compatible
+
+
