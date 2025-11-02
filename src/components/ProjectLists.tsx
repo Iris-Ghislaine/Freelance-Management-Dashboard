@@ -2,7 +2,6 @@ import { type Project } from '../types';
 import { useAppContext } from '../context/AppContext';
 import {
   findClientByIdSafe,
-  formatCurrency,
   getProjectStatusColor,
   getPaymentStatusColor
 } from '../utils/helpers';
@@ -82,9 +81,9 @@ export function ProjectList({ projects }: ProjectListProps) {
 
           <div className="flex items-center justify-between pt-4 border-t border-gray-200">
             <div className="flex items-center gap-2">
-              <DollarSign className="w-5 h-5 text-gray-400" />
+              <DollarSign className="w-5 h-5 text-green-600" />
               <span className="text-lg font-semibold text-gray-900">
-                {formatCurrency(project.budget)}
+                {(project.budget)}
               </span>
             </div>
 

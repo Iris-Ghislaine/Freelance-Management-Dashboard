@@ -70,7 +70,7 @@ const initialState: AppState = {
   },
   {
     projectId: "p3",
-    amount: 6000, // partial payment
+    amount: 6000, 
     date: "2025-11-01T09:00:00Z"
   },
   {

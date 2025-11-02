@@ -15,7 +15,7 @@ export function ClientCard({ client }: ClientCardProps) {
           </div>
           <div>
             <h3 className="text-lg font-semibold text-gray-900">{client.name}</h3>
-            <p className="text-sm text-gray-500">Client ID: {client.id}</p>
+
           </div>
         </div>
       </div>
@@ -33,8 +33,8 @@ export function ClientCard({ client }: ClientCardProps) {
           </div>
         ) : (
           <div className="flex items-center gap-2 text-gray-400">
-            <Mail className="w-4 h-4" />
-            <span className="text-sm italic">No email provided</span>
+            {/* <Mail className="w-4 h-4" /> */}
+            {/* <span className="text-sm italic">No email provided</span> */}
           </div>
         )}
       </div>

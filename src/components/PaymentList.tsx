@@ -1,5 +1,5 @@
 import { type Payment, type Project } from '../types';
-import { formatCurrency, formatDate } from '../utils/helpers';
+import {  formatDate } from '../utils/helpers';
 import { DollarSign, Calendar } from 'lucide-react';
 
 interface PaymentListProps {
@@ -45,13 +45,12 @@ export function PaymentList({ payments, projects }: PaymentListProps) {
                   <div className="text-sm font-medium text-gray-900">
                     {getProjectTitle(payment.projectId)}
                   </div>
-                  <div className="text-xs text-gray-500">ID: {payment.projectId}</div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center gap-2">
                     <DollarSign className="w-4 h-4 text-green-600" />
                     <span className="text-sm font-semibold text-gray-900">
-                      {formatCurrency(payment.amount)}
+                      {payment.amount}
                     </span>
                   </div>
                 </td>
