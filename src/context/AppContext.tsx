@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer, type ReactNode } from 'react';
-import { type AppState,type Client,type Payment, type ActionType, } from '../types/types';
+import {type AppState, type ActionType, } from '../types';
 
 const initialState: AppState = {
   clients: [
